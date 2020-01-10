@@ -4,7 +4,6 @@ import xlwt
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from xlutils.copy import copy
-from orderedset import OrderedSet
 import sys
 import time
 import ipaddress
@@ -50,7 +49,7 @@ def read_in(usr_path):
 
 
 def findKeys(ws, rows):
-    func_list = OrderedSet()
+    func_list = []
     for i in range(2, rows):
         if (ws.cell(i, 0)).value:
             func_list.add((ws.cell(i, 0)).value)
